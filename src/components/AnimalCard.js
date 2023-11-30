@@ -21,9 +21,6 @@
 // }
 
 import React, { useState } from 'react';
-
-import Image from 'next/image';
-
 import styles from "../styles/AnimalCard.module.css";
 import {useAuth} from "../contexts/useAuth"
 import Head from 'next/head';
@@ -34,7 +31,7 @@ export default function AnimalCard({ animal }) {
     
     const owner = users?.filter(user => user._id === animal.owner)[0];
 
-    const defaultImage="../images/defaultImage.png";
+    const defaultImage="/images/defaultImage.png";
 
     const [imageSrc, setImageSrc] = useState(animal.profilePicture || defaultImage);
 
