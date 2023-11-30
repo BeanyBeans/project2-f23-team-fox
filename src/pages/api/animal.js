@@ -3,6 +3,7 @@ import deleteAnimal from "../../../server/mongodb/actions/deleteAnimal.js";
 import createAnimal from "../../../server/mongodb/actions/createAnimal.js";
 
 export default async function handler(req, res) {
+    console.log("animal handler");
     if (req.method === "PATCH") {
         try {
             const body = JSON.parse(req.body)
@@ -30,6 +31,7 @@ export default async function handler(req, res) {
         try {
             const body = JSON.parse(req.body)
             const response = await createAnimal(body);
+            console.log("create animal create animal");
             return res.status(200).json({"status": "success"});
         } catch (e) {
             console.log(e.message.toString());
