@@ -1,6 +1,8 @@
 import UserCard from "./UserCard"
 import styles from '../styles/UserList.module.css';
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import arrow from '../images/right-arrow.png';
 
 const limitPerPage = 12;
 
@@ -46,11 +48,15 @@ export default function UserList({ users, pagination }) {
                     <div className={styles.buttons}>
                         <button className={styles.button} onClick={() => {
                             if (seg > 1) setSeg(seg - 1);
-                        }}>&larr;</button>
-                        <p>{seg}</p>
+                        }}>
+                            <Image className={styles.leftArrow} src={arrow} />
+                        </button>
+                        <p className={styles.text}>{seg}</p>
                         <button className={styles.button} onClick={() => {
                             if (seg < totalPages) setSeg(seg + 1);
-                        }}>&rarr;</button>
+                        }}>
+                            <Image className={styles.rightArrow} src={arrow} />
+                        </button>
                     </div>
                 </div>
             ):(
