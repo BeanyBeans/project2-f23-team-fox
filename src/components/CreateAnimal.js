@@ -13,7 +13,7 @@ export default function CreateAnimal() {
     const [month, setMonth] = useState('January');
     const [day, setDay] = useState('');
     const [year, setYear] = useState('');
-    const [notes, setNotes] = useState('');
+    const [profilePictureUrl, setProfilePictureUrl] = useState('');
 
     const [invalidHours, setInvalidHours] = useState(false);
     const [invalidDate, setInvalidDate] = useState(false);
@@ -26,7 +26,7 @@ export default function CreateAnimal() {
             breed,
             owner: loginUser,
             hoursTrained: hours,
-            profilePicture: notes,
+            profilePicture: profilePictureUrl,
         };
         const response = await createanimal(param);
         if (response.status === "success") {
@@ -131,8 +131,8 @@ export default function CreateAnimal() {
                     </div>
                 </div>
 
-                <label htmlFor="notes" className={styles.titleText}>Note</label>
-                <textarea className={styles.input + " " + styles.textarea} id="notes" value={notes} placeholder="Note" onChange={(e) => setNotes(e.target.value)} rows="4"></textarea>
+                <label htmlFor="profilePictureUrl" className={styles.titleText}>Profile Picture URL</label>
+                <input type="text" id="profilePictureUrl" className={styles.input} placeholder="http://example.com/picture.jpg" value={profilePictureUrl} onChange={(e) => setProfilePictureUrl(e.target.value)} required />
 
                 <div className={styles.twoButtons}>
                     <button className={styles.cancel} onClick = {() => {
