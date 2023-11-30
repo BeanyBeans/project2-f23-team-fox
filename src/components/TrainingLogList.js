@@ -2,8 +2,10 @@ import TrainingCard from "./TrainingCard.js"
 import { useAuth } from "../contexts/useAuth.js"
 import style from "../styles/TrainingList.module.css"
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import arrow from '../images/right-arrow.png';
 
-const limitPerPage = 10;
+const limitPerPage = 8;
 
 export default function TrainingLogList({ logs, pagination }) {
     const [seg, setSeg] = useState(1);
@@ -15,7 +17,6 @@ export default function TrainingLogList({ logs, pagination }) {
         const fetch_pag = async () => {
             const response = await fetch(`/api/admin/training?page=${seg}&limit=${limitPerPage}`);
             const data = await response.json();
-            // console.log(data);
             setPagLogs(data);
             return data;
         }
@@ -42,11 +43,11 @@ export default function TrainingLogList({ logs, pagination }) {
                     <div className={style.buttons}>
                         <button className={style.button} onClick={() => {
                             if (seg > 1) setSeg(seg - 1);
-                        }}>Left</button>
-                        <p>{seg}</p>
+                        }}><Image className={style.leftArrow} src={arrow} /></button>
+                        <p className={style.text}>{seg}</p>
                         <button className={style.button} onClick={() => {
                             if (seg < totalPages) setSeg(seg + 1);
-                        }}>Right</button>
+                        }}><Image className={style.rightArrow} src={arrow} /></button>
                     </div>
                 </div>
             ):(

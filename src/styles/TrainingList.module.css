@@ -11,27 +11,39 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 30px;
+    justify-content: center;
     margin-top: 30px;
     margin-left: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     gap: 30px;
+}
+
+.leftArrow {
+    height: 18px;
+    width: 18px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.rightArrow {
+    height: 18px;
+    width: 18px;
 }
 
 .button {
     border-radius: 10px;
-    padding: 15px;
-    height: 20px;
-    width: 50px;
-    font-weight: 600;
+    height: 18px;
+    width: 18px;
+    font-weight: 700;
+    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #D21312;
-    color: white;
+    background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
-.button:hover {
-    background-color: #c41312;
+.text {
+    color: black;
+    font-weight: bolder;
 }

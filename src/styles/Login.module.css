@@ -82,3 +82,16 @@
     font-weight: 300;
     font-size: 14px;
 }
+
+.footer {
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #666;
+    font-weight: 300;
+    font-family: 'Heebo', sans-serif;
+    width: 100%;
+    margin-bottom: 10px;
+}
