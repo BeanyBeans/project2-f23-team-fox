@@ -74,6 +74,9 @@ export default function LoginPage() {
                     router.push('./createaccount');
                 }}>Sign up</a></p>
             </div>
+            <footer className={styles.footer}>
+                <p>Made by Team Fox 🦊 ❤️</p>
+            </footer>
         </div>
     );
 }
