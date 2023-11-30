@@ -139,6 +139,9 @@ export default function CreateAccountPage() {
                 <p className={styles.bottomNote}>Already have an account? <a className={styles.click} onClick={() => {
                     router.push('/login')
                 }}>Sign in</a></p>
+                <footer className={styles.footer}>
+                    <p>Made by Team Fox 🦊 ❤️</p>
+                </footer>
             </div>
         </div>
     );
