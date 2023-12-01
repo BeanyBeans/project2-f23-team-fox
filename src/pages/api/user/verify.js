@@ -9,7 +9,7 @@ export default async function handler(req, res) {
         console.log("that point");
         try {
             const result =  await verifyUser(req.body)
-            const token = jwt.sign({ userID: result.userID }, JWT_SECRET, { expiresIn: "30m"});
+            const token = jwt.sign({ userID: result.userID }, JWT_SECRET, { expiresIn: "1m"});
             res.setHeader('Set-Cookie', serialize('token', token, { httpOnly: true, path: '/'}));
             return res.status(200).json(result)
         } catch (e) {

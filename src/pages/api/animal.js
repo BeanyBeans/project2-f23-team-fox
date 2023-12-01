@@ -30,6 +30,7 @@ export default async function handler(req, res) {
     } else if (req.method === 'POST') {
         try {
             const body = JSON.parse(req.body)
+            console.log("just before");
             const response = await createAnimal(body);
             console.log("create animal create animal");
             return res.status(200).json({"status": "success"});

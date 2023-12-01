@@ -28,6 +28,8 @@ const animalAPI = '/api/animal/'
 const trainingAPI = '/api/training/'
 
 function renderComponent(display, setDisplay, animals, trainingLogs, users, searchTerm, userID) {
+    console.log("dashboard here");
+    console.log(display);
     switch (display) {
         case 0:
             return (
